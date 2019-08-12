@@ -30,7 +30,13 @@ const config = {
                 use: [
                     'style-loader',
                     'css-loader',
-                    'stylus-loader'
+                    'stylus-loader',
+                    {
+                        loader:'postcss-loader',
+                        options:{
+                            sourceMap :true
+                        }
+                    }
                 ]
             },
             {
@@ -44,6 +50,10 @@ const config = {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.jsx$/,
+                loader:'babel-loader'
             }
         ]
     },
